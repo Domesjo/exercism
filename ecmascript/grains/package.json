@@ -112,5 +112,7 @@
   "licenses": [
     "MIT"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "big-integer": "^1.6.23"
+  }
 }
