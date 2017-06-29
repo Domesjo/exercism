@@ -12,7 +12,7 @@ class RunLengthEncodingTest < Minitest::Test
   end
 
   def test_encode_single_characters_only_are_encoded_without_count
-    skip
+    
     input = 'XYZ'
     output = 'XYZ'
     assert_equal output, RunLengthEncoding.encode(input)
