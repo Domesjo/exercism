@@ -158,55 +158,55 @@ describe('Clock', () => {
         expect(at(15, 36).equals(at(15, 37))).toBeFalsy();
       });
 
-      xit('clocks an hour apart', () => {
+      it('clocks an hour apart', () => {
         expect(at(14, 37).equals(at(15, 37))).toBeFalsy();
       });
 
-      xit('clocks with hour overflow', () => {
+      it('clocks with hour overflow', () => {
         expect(at(10, 37).equals(at(34, 37))).toBeTruthy();
       });
 
-      xit('clocks with hour overflow by several days', () => {
+      it('clocks with hour overflow by several days', () => {
         expect(at(3, 11).equals(at(99, 11))).toBeTruthy();
       });
 
-      xit('clocks with negative hour', () => {
+      it('clocks with negative hour', () => {
         expect(at(22, 40).equals(at(-2, 40))).toBeTruthy();
       });
 
-      xit('clocks with negative hour that wraps', () => {
+      it('clocks with negative hour that wraps', () => {
         expect(at(17, 3).equals(at(-31, 3))).toBeTruthy();
       });
 
-      xit('clocks with negative hour that wraps multiple times', () => {
+      it('clocks with negative hour that wraps multiple times', () => {
         expect(at(13, 49).equals(at(-83, 49))).toBeTruthy();
       });
 
-      xit('clocks with minute overflow', () => {
+      it('clocks with minute overflow', () => {
         expect(at(0, 1).equals(at(0, 1441))).toBeTruthy();
       });
 
-      xit('clocks with minute overflow by several days', () => {
+      it('clocks with minute overflow by several days', () => {
         expect(at(2, 2).equals(at(2, 4322))).toBeTruthy();
       });
 
-      xit('clocks with negative minute', () => {
+      it('clocks with negative minute', () => {
         expect(at(2, 40).equals(at(3, -20))).toBeTruthy();
       });
 
-      xit('clocks with negative minute that wraps', () => {
+      it('clocks with negative minute that wraps', () => {
         expect(at(4, 10).equals(at(5, -1490))).toBeTruthy();
       });
 
-      xit('clocks with negative minute that wraps multiple times', () => {
+      it('clocks with negative minute that wraps multiple times', () => {
         expect(at(6, 15).equals(at(6, -4305))).toBeTruthy();
       });
 
-      xit('clocks with negative hours and minutes', () => {
+      it('clocks with negative hours and minutes', () => {
         expect(at(7, 32).equals(at(-12, -268))).toBeTruthy();
       });
 
-      xit('clocks with negative hours and minutes that wrap', () => {
+      it('clocks with negative hours and minutes that wrap', () => {
         expect(at(18, 7).equals(at(-54, -11513))).toBeTruthy();
       });
 

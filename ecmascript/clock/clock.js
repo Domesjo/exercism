@@ -29,9 +29,9 @@ function at(hours, minutes=0){
   }
   let hour = hours.toString().length === 1 ? `0${hours}:`: `${hours}:`;
   let min = minutes.toString().length === 1 ? `0${minutes}`: `${minutes}`
+  if(at.prototype.time) at.prototype.old = at.prototype.time;
   at.prototype.time = hour + min
   return hour + min;
-
 }
 String.prototype.plus = (mins)=>{
   let newTime = at.prototype.time.split(':');
@@ -43,8 +43,8 @@ String.prototype.minus = (mins)=>{
   return at(parseInt(newTime[0]), (parseInt(newTime[1]) - mins) )
 }
 String.prototype.equals = (cb)=>{
-  console.log(cb, at.prototype.time);
-  return at.prototype.time === cb
+  console.log(at.prototype.time === cb);
+  return at.prototype.old === cb
 }
 
 export default at;
