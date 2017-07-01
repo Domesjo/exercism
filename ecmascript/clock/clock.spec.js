@@ -68,15 +68,15 @@ describe('Clock', () => {
       expect(at(1, -160).toString()).toEqual('22:20');
     });
 
-    xit('negative minutes rolls over continuously', () => {
+    it('negative minutes rolls over continuously', () => {
       expect(at(1, -4820).toString()).toEqual('16:40');
     });
 
-    xit('negative hour and minutes both roll over', () => {
+    it('negative hour and minutes both roll over', () => {
       expect(at(-25, -160).toString()).toEqual('20:20');
     });
 
-    xit('negative hour and minutes both roll over continuously', () => {
+    it('negative hour and minutes both roll over continuously', () => {
       expect(at(-121, -5810).toString()).toEqual('22:10');
     });
 

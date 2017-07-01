@@ -1,9 +1,4 @@
 export default function at(hours, minutes=0){
-  if (0 > hours){
-    while( hours < 0){
-      hours += 24;
-    }
-  }
   if (0 > minutes && hours ===0){
     while(minutes < 0){
       minutes += 60;
@@ -12,6 +7,11 @@ export default function at(hours, minutes=0){
     while(minutes < 0){
       hours-= 1;
       minutes += 60;
+    }
+  }
+  if (0 > hours){
+    while( hours < 0){
+      hours += 24;
     }
   }
 
