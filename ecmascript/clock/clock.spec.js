@@ -48,23 +48,23 @@ describe('Clock', () => {
       expect(at(72, 8640).toString()).toEqual('00:00');
     });
 
-    xit('negative hour', () => {
+    it('negative hour', () => {
       expect(at(-1, 15).toString()).toEqual('23:15');
     });
 
-    xit('negative hour rolls over', () => {
+    it('negative hour rolls over', () => {
       expect(at(-25, 0).toString()).toEqual('23:00');
     });
 
-    xit('negative hour rolls over continuously', () => {
+    it('negative hour rolls over continuously', () => {
       expect(at(-91, 0).toString()).toEqual('05:00');
     });
 
-    xit('negative minutes', () => {
+    it('negative minutes', () => {
       expect(at(1, -40).toString()).toEqual('00:20');
     });
 
-    xit('negative minutes rolls over', () => {
+    it('negative minutes rolls over', () => {
       expect(at(1, -160).toString()).toEqual('22:20');
     });
 
