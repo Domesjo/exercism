@@ -1,4 +1,4 @@
-export default function at(hours, minutes=0){
+function at(hours, minutes=0){
   if (0 > minutes && hours ===0){
     while(minutes < 0){
       minutes += 60;
@@ -29,6 +29,22 @@ export default function at(hours, minutes=0){
   }
   let hour = hours.toString().length === 1 ? `0${hours}:`: `${hours}:`;
   let min = minutes.toString().length === 1 ? `0${minutes}`: `${minutes}`
+  at.prototype.time = hour + min
   return hour + min;
 
 }
+String.prototype.plus = (mins)=>{
+  let newTime = at.prototype.time.split(':');
+  return at(parseInt(newTime[0]), (parseInt(newTime[1]) + mins) )
+}
+String.prototype.minus = (mins)=>{
+  let newTime = at.prototype.time.split(':');
+  if(parseInt(newTime[0]) === 0 && (newTime[1] - mins) <= 0) newTime[0] = 24
+  return at(parseInt(newTime[0]), (parseInt(newTime[1]) - mins) )
+}
+String.prototype.equals = (cb)=>{
+  console.log(cb, at.prototype.time);
+  return at.prototype.time === cb
+}
+
+export default at;
