@@ -10,12 +10,12 @@ class BinaryTest < Minitest::Test
   end
 
   def test_binary_1_is_decimal_1
-    skip
+
     assert_equal 1, Binary.to_decimal('1')
   end
 
   def test_binary_10_is_decimal_2
-    skip
+    
     assert_equal 2, Binary.to_decimal('10')
   end
 
