@@ -45,12 +45,12 @@ class SumOfMultiplesTest < Minitest::Test
   end
 
   def test_multiples_of_5_or_25_up_to_51
-    
+
     assert_equal 275, SumOfMultiples.new(5, 25).to(51)
   end
 
   def test_multiples_of_43_or_47_up_to_10000
-    skip
+    
     assert_equal 2_203_160, SumOfMultiples.new(43, 47).to(10000)
   end
 
