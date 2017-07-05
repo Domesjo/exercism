@@ -6,12 +6,13 @@ class SumOfMultiples
 
   def to(int)
     ans = 0
-    (0..int-1).to_a.each do |number|
+    (1..int-1).to_a.each do |number|
       if number % @n1
         ans += 1
-      elsif number % @n2
+      end
+      if number % @n2
         ans += 1
-      end unless number == 0
+      end
     end
     return ans
   end
