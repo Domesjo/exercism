@@ -1,7 +1,8 @@
 class SumOfMultiples
-  def initialize(n1, n2)
+  def initialize(n1, n2, n3=nil)
     @n1 = n1
     @n2 = n2
+    @n3 = n3
   end
 
   def to(int)
@@ -10,6 +11,8 @@ class SumOfMultiples
       if number % @n1 == 0
         ans += number
       elsif number % @n2 == 0
+        ans += number
+      elsif @n3 && number % @n3 == 0
         ans += number
       end
     end
