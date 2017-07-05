@@ -7,11 +7,10 @@ class SumOfMultiples
   def to(int)
     ans = 0
     (1..int-1).to_a.each do |number|
-      if number % @n1
-        ans += 1
-      end
-      if number % @n2
-        ans += 1
+      if number % @n1 == 0
+        ans += number
+      elsif number % @n2 == 0
+        ans += number
       end
     end
     return ans
