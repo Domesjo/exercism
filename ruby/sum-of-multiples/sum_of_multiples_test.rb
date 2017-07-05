@@ -60,7 +60,7 @@ class SumOfMultiplesTest < Minitest::Test
   end
 
   def test_multiples_of_an_empty_list_up_to_10000
-    
+
     assert_equal 0, SumOfMultiples.new().to(10000)
   end
 
@@ -82,7 +82,7 @@ class SumOfMultiplesTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
+    
     assert_equal 1, BookKeeping::VERSION
   end
 end

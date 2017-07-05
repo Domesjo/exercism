@@ -1,3 +1,6 @@
+module BookKeeping
+  VERSION = 1 # Where the version number matches the one in the test.
+end
 class SumOfMultiples
   def initialize(n1=nil, n2=nil, n3=nil)
     @n1 = n1
