@@ -10,7 +10,7 @@ class School
         ans << student[:name]
       end
     end
-    return ans
+    return ans.sort()
   end
 
   def add(name, grade)
