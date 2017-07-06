@@ -4,7 +4,13 @@ class School
   end
 
   def students(i)
-    return @all_students
+    ans = []
+    @all_students.select do |student|
+      if student[:grade] == i
+        ans << student[:name]
+      end
+    end
+    return ans
   end
 
   def add(name, grade)
