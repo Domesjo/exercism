@@ -10,7 +10,7 @@ class SchoolTest < Minitest::Test
   end
 
   def test_add_student
-    
+
     school = School.new
     assert school.add('Aimee', 2)
     expected = ['Aimee']
@@ -18,7 +18,7 @@ class SchoolTest < Minitest::Test
   end
 
   def test_add_students_to_different_grades
-    skip
+    
     school = School.new
     school.add('Aimee', 3)
     school.add('Beemee', 7)
