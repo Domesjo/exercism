@@ -18,16 +18,16 @@ class School
   end
 
   def students_by_grade
-    ans = []
     grade = {
-      students=> []
+      :students=> []
     }
+
     @all_students.map do |student|
       grade[:grade] = student[:grade] unless grade.key(:grade)
-      grade[student[:grade]] = student[:students] << student[:name]
-      ans << grade
+      grade[:students] << student[:name] unless grade[:students].include?(student[:name])
     end
-    return ans
+    p grade
+    return []
   end
 
 end
