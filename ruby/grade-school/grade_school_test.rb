@@ -46,7 +46,7 @@ class SchoolTest < Minitest::Test
   end
 
   def test_empty_students_by_grade
-    
+
     school = School.new
     expected = []
     assert_equal expected, school.students_by_grade

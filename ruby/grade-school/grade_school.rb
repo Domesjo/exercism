@@ -3,7 +3,7 @@ class School
     @all_students = []
   end
 
-  def students(i)
+  def students(i=0)
     ans = []
     @all_students.map do |student|
       if student[:grade] == i
@@ -19,11 +19,15 @@ class School
 
   def students_by_grade
     ans = []
+    grade = {
+      students=> []
+    }
     @all_students.map do |student|
-      grade = {}
-      grade[student[grade]] = student[name]
+      grade[:grade] = student[:grade] unless grade.key(:grade)
+      grade[student[:grade]] = student[:students] << student[:name]
       ans << grade
     end
     return ans
   end
+
 end
