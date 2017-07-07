@@ -18,6 +18,7 @@ class School
   end
 
   def students_by_grade
+    ans = []
     grade = {
       :students=> []
     }
@@ -26,8 +27,10 @@ class School
       grade[:grade] = student[:grade] unless grade.key(:grade)
       grade[:students] << student[:name] unless grade[:students].include?(student[:name])
     end
-    p grade
-    return []
+    grade[:students] = grade[:students].sort()
+    ans << grade unless !grade
+    p ans
+    return ans
   end
 
 end
