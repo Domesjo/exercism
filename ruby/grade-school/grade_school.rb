@@ -26,11 +26,16 @@ class School
     @all_students.map do |student|
       grade[:grade] = student[:grade] unless grade.key(:grade)
       grade[:students] << student[:name] unless grade[:students].include?(student[:name])
+      grade[:students] = grade[:students].sort()
+      ans << grade unless grade[:students].length == 0
+      p ans.all? do |cell|
+        cell[:grade] == student[:grade]
+      end
+
     end
-    grade[:students] = grade[:students].sort()
-    ans << grade unless grade[:students].length == 0
     p ans
     return ans
+
   end
 
 end
