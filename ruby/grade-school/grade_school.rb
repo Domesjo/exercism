@@ -19,19 +19,31 @@ class School
 
   def students_by_grade
     ans = []
-    grade = {
-      :grade => nil,
-      :students=> []
-    } 
+    num_grades = []
     @all_students.map do |student|
-      grade[:grade] = student[:grade] unless grade.key(:grade)
-      grade[:students] << student[:name] unless grade[:students].include?(student[:name])
+      grade = {
+        :grade => nil,
+        :students=> []
+      }
+      num_grades << student[:grade]
+      grade[:grade] = student[:grade]
+      grade[:students] << student
       grade[:students] = grade[:students].sort()
       ans << grade unless grade[:students].length == 0
     end
-    ans = ans.uniq
-    p ans
-    return ans
+    num_grades.uniq!
+
+    final = num_grades.map do | grade |
+      temp = {:grade => grade, :students => []}
+      ans.each do |stu|
+
+        temp[:students] << stu[:students][0][:name] if stu[:grade] == grade
+        temp[:students].sort!
+      end
+      temp
+    end
+
+    return final
 
   end
 
