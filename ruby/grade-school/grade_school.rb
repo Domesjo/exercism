@@ -1,3 +1,6 @@
+module BookKeeping
+  VERSION = 3 # Where the version number matches the one in the test.
+end
 class School
   def initialize()
     @all_students = []
@@ -42,7 +45,9 @@ class School
       end
       temp
     end
-
+    final.sort_by! do |hsh|
+      hsh[:grade]
+    end
     return final
 
   end
