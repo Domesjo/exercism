@@ -16,6 +16,6 @@ export default class DiffieHellman { // Takes two arguments p and g
   }
 
   getPublicKeyFromPrivateKey(key) {
-    if (key <= 0) throw new Error("Has to bigger than 1");
+    if (key <= 1) throw new Error("Has to bigger than 1");
   }
 }
