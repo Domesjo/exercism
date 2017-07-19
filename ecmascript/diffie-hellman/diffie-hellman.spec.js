@@ -35,7 +35,7 @@ describe('diffie-hellman', () => {
     }).toThrow();
   });
 
-  xtest('throws an error if private key is one', () => {
+  test('throws an error if private key is one', () => {
     expect(() => {
       diffieHellman.getPublicKeyFromPrivateKey(1);
     }).toThrow();
