@@ -47,7 +47,7 @@ describe('diffie-hellman', () => {
     }).toThrow();
   });
 
-  xtest('throws an error if private key is greater than the modulus parameter p', () => {
+  test('throws an error if private key is greater than the modulus parameter p', () => {
     expect(() => {
       diffieHellman.getPublicKeyFromPrivateKey(p + 1);
     }).toThrow();
