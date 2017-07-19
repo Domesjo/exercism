@@ -4,7 +4,7 @@ export default class DiffieHellman { // Takes two arguments p and g
       this.p = p;
       this.g = g;
     } else {
-      throw new Error("NOPEE");
+      throw new Error('NOPEE');
     }
   }
 
@@ -16,8 +16,8 @@ export default class DiffieHellman { // Takes two arguments p and g
   }
 
   getPublicKeyFromPrivateKey(p) {
-    if (p <= 1) throw new Error("Has to bigger than 1");
+    if (p <= 1 || p >= this.p) throw new Error('Has to bigger than 1');
     // Get the public key g**a % p
-
+    return (this.g ** p) % this.p
   }
 }
