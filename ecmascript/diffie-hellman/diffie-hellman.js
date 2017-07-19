@@ -20,4 +20,10 @@ export default class DiffieHellman { // Takes two arguments p and g
     // Get the public key g**a % p
     return (this.g ** p) % this.p
   }
+
+  getSharedSecret(privateKey, pk) {
+    // get shared key s = A**a mod p
+    // Bobs Public key ** Alice publicKey % this.p
+    return (pk ** privateKey) % this.p
+  }
 }
