@@ -43,7 +43,6 @@ describe('sublist', () => {
     const listTwo = new List([0, 1, 2, 3, 1, 2, 5, 6]);
 
     expect(listOne.compare(listTwo)).toEqual('SUBLIST');
-
   });
 
   test('consecutive', () => {
