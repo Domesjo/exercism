@@ -14,7 +14,7 @@ export default class List {
     else if (this.arr.some((val, index) => {
       if (arr.includes(val)) {
         const i = arr.indexOf(val);
-        return arr[i + 1] === this.arr[index + 1];
+        return (arr[i + 1] === this.arr[index + 1] && i !== 0 && this.arr.indexOf(this.arr[index + 1] !== (this.arr.length - 1)));
       }
       return false;
     }) || (this.arr.length === 0 && arr2.length() >= 1)) return 'SUBLIST';
