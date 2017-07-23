@@ -74,21 +74,21 @@ describe('sublist', () => {
     expect(listOne.compare(listTwo)).toEqual('SUBLIST');
   });
 
-  xtest('at start of superlist', () => {
+  test('at start of superlist', () => {
     const listOne = new List([0, 1, 2, 3, 4, 5]);
     const listTwo = new List([0, 1, 2]);
 
     expect(listOne.compare(listTwo)).toEqual('SUPERLIST');
   });
 
-  xtest('in middle of superlist', () => {
+  test('in middle of superlist', () => {
     const listOne = new List([0, 1, 2, 3, 4, 5]);
     const listTwo = new List([2, 3]);
 
     expect(listOne.compare(listTwo)).toEqual('SUPERLIST');
   });
 
-  xtest('at end of superlist', () => {
+  test('at end of superlist', () => {
     const listOne = new List([0, 1, 2, 3, 4, 5]);
     const listTwo = new List([3, 4, 5]);
 
