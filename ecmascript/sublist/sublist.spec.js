@@ -38,7 +38,7 @@ describe('sublist', () => {
     expect(listOne.compare(listTwo)).toEqual('UNEQUAL');
   });
 
-  xtest('false start', () => {
+  test('false start', () => {
     const listOne = new List([1, 2, 5]);
     const listTwo = new List([0, 1, 2, 3, 1, 2, 5, 6]);
 
@@ -46,28 +46,28 @@ describe('sublist', () => {
 
   });
 
-  xtest('consecutive', () => {
+  test('consecutive', () => {
     const listOne = new List([1, 1, 2]);
     const listTwo = new List([0, 1, 1, 1, 2, 1, 2]);
 
     expect(listOne.compare(listTwo)).toEqual('SUBLIST');
   });
 
-  xtest('sublist at start', () => {
+  test('sublist at start', () => {
     const listOne = new List([0, 1, 2]);
     const listTwo = new List([0, 1, 2, 3, 4, 5]);
 
     expect(listOne.compare(listTwo)).toEqual('SUBLIST');
   });
 
-  xtest('sublist in middle', () => {
+  test('sublist in middle', () => {
     const listOne = new List([2, 3, 4]);
     const listTwo = new List([0, 1, 2, 3, 4, 5]);
 
     expect(listOne.compare(listTwo)).toEqual('SUBLIST');
   });
 
-  xtest('sublist at end', () => {
+  test('sublist at end', () => {
     const listOne = new List([3, 4, 5]);
     const listTwo = new List([0, 1, 2, 3, 4, 5]);
 
