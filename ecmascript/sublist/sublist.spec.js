@@ -24,7 +24,7 @@ describe('sublist', () => {
     expect(listOne.compare(listTwo)).toEqual('SUPERLIST');
   });
 
-  xtest('a non-empty list equals itself', () => {
+  test('a non-empty list equals itself', () => {
     const listOne = new List([1, 2, 3]);
     const listTwo = new List([1, 2, 3]);
 

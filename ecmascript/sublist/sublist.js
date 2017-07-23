@@ -7,9 +7,10 @@ export default class List {
     return this.arr.length;
   }
 
-  compare(arr) {
-    if (this.arr.every((val, index) => val === arr[index]) && this.arr.length === arr.length()) return 'EQUAL';
-    if (this.arr.every((val, index) => arr[index].includes(val) || (this.arr.length === 0 && arr.length() >= 1))) return 'SUBLIST';
+  compare(arr2) {
+    const arr = arr2.arr;
+    if (this.arr.every((val, index) => val === arr[index]) && this.arr.length === arr2.length()) return 'EQUAL';
+    else if (this.arr.every((val, index) => arr[index].includes(val) || (this.arr.length === 0 && arr2.length() >= 1))) return 'SUBLIST';
     return 'UNEQUAL';
   }
 }
