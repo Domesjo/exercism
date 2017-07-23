@@ -31,7 +31,7 @@ describe('sublist', () => {
     expect(listOne.compare(listTwo)).toEqual('EQUAL');
   });
 
-  xtest('two different lists are unequal', () => {
+  test('two different lists are unequal', () => {
     const listOne = new List([1, 2, 3]);
     const listTwo = new List([2, 3, 4]);
 
