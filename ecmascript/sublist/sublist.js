@@ -9,6 +9,7 @@ export default class List {
 
   compare(arr) {
     if (this.arr.every((val, index) => val === arr[index]) && this.arr.length === arr.length()) return 'EQUAL';
+    if (this.arr.every((val, index) => arr[index].includes(val) || (this.arr.length === 0 && arr.length() >= 1))) return 'SUBLIST';
     return 'UNEQUAL';
   }
 }
