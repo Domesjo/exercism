@@ -17,7 +17,7 @@ describe('sublist', () => {
     expect(listOne.compare(listTwo)).toEqual('SUBLIST');
   });
 
-  xtest('non empty list contains empty list', () => {
+  test('non empty list contains empty list', () => {
     const listOne = new List([1, 2, 3]);
     const listTwo = new List();
 
@@ -94,28 +94,28 @@ describe('sublist', () => {
     expect(listOne.compare(listTwo)).toEqual('SUPERLIST');
   });
 
-  xtest('first list missing element from second list', () => {
+  test('first list missing element from second list', () => {
     const listOne = new List([1, 3]);
     const listTwo = new List([1, 2, 3]);
 
     expect(listOne.compare(listTwo)).toEqual('UNEQUAL');
   });
 
-  xtest('second list missing element from first list', () => {
+  test('second list missing element from first list', () => {
     const listOne = new List([1, 2, 3]);
     const listTwo = new List([1, 3]);
 
     expect(listOne.compare(listTwo)).toEqual('UNEQUAL');
   });
 
-  xtest('order matters to a list', () => {
+  test('order matters to a list', () => {
     const listOne = new List([1, 2, 3]);
     const listTwo = new List([3, 2, 1]);
 
     expect(listOne.compare(listTwo)).toEqual('UNEQUAL');
   });
 
-  xtest('same digits but different numbers', () => {
+  test('same digits but different numbers', () => {
     const listOne = new List([1, 0, 1]);
     const listTwo = new List([10, 1]);
 
