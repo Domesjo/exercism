@@ -17,11 +17,11 @@ export default class List {
         return ((this.arr[index + 1] && arr[i + 1] && arr[i + 1] === this.arr[index + 1] && isFirstAndLast) || (arr[i + 1] === this.arr[index + 1] && arr[i + 2] && this.arr[index + 2] && arr[i + 2] === this.arr[index + 2]));
       }
       return false;
-    }) && this.arr.slice(0, arr2.length()).toString() !== arr.toString()) || (this.arr.length === 0 && arr2.length() >= 1)) return 'SUBLIST';
+    }) && this.arr.slice(0, arr2.length()).toString() !== arr.toString() && this.arr.length <= arr.length) || (this.arr.length === 0 && arr2.length() >= 1)) return 'SUBLIST';
     else if (arr.some((val, index) => {
       if (this.arr.includes(val)) {
         const i = this.arr.indexOf(val);
-        const isFirstAndLast = (index !== 0 && i + 1 !== (arr.length - 1) || arr.length !== this.arr.length);
+        const isFirstAndLast = (index !== 0 && i + 1 !== (arr.length - 1)||(arr.length !== this.arr.length));
 
         return ((this.arr[i + 1] && arr[index + 1] && arr[index + 1] === this.arr[i + 1] && isFirstAndLast) || (arr[index + 1] === this.arr[i + 1] && arr[index + 2] && this.arr[i + 2] && arr[index + 2] === this.arr[index + 2]));
       }
