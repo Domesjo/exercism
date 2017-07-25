@@ -1,9 +1,13 @@
 import string
 def is_isogram(word):
-    alpa = list(string.printable)
+    word.lower()
+    alpa = list(string.ascii_lowercase)
+
     for letter in word:
-        try:
-            alpa.remove(letter)
-        except:
-            return False
+        if letter != '-':
+            try:
+                alpa.remove(letter)
+            except:
+                return False
+    print(alpa)
     return True
