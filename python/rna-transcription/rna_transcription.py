@@ -1,7 +1,3 @@
-# `G` -> `C`
-# `C` -> `G`
-# `T` -> `A`
-# `A` -> `U`
 def to_rna(rna):
     replacement = { 'G': 'C', 'C': 'G', 'T': 'A', 'A': 'U'}
     ans = ''
@@ -11,4 +7,3 @@ def to_rna(rna):
         except KeyError:
             return ''
     return ans
-#to_rna('G')
