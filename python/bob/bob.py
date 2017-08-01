@@ -1,3 +1,5 @@
 import re
 def hey(phrase):
-    if()
+    if re.match(r".*\?\s*", phrase):
+        return "Sure."
+    return "Whatever."
