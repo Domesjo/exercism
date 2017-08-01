@@ -9,8 +9,10 @@ def encode(input):
         if not i == len(input) - 1 and letter == input[i + 1]:
             count += 1
         else:
-            ans += str(count) + letter
-            print(letter*count)
+            if count > 1:
+                ans += str(count) + letter
+            else:
+                ans += letter
             count = 1
     print(ans)
     return ans
