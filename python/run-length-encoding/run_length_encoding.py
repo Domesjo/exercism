@@ -4,11 +4,14 @@ def decode():
 
 def encode(input):
     ans = ''
+    count = 1
     for i, letter in enumerate(input):
-        count = 1
         if not i == len(input) - 1 and letter == input[i + 1]:
             count += 1
-            print(count)
-        ans += (letter*count)
+        else:
+            ans += str(count) + letter
+            print(letter*count)
+            count = 1
     print(ans)
+    return ans
 encode("AABBBCCCC")
