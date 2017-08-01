@@ -4,6 +4,11 @@ def decode():
 
 def encode(input):
     ans = ''
-    for letter, i in enumerate(input):
-        print(i, letter)
-encode("XYZ")
+    for i, letter in enumerate(input):
+        count = 1
+        if not i == len(input) - 1 and letter == input[i + 1]:
+            count += 1
+            print(count)
+        ans += (letter*count)
+    print(ans)
+encode("AABBBCCCC")
