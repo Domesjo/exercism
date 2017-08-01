@@ -3,7 +3,10 @@ def decode(output):
     ans = ''
     for i, letter in enumerate(output):
         if re.match(r"[0-9]", letter):
-            ans += output[i +1] * (int(letter) - 1)
+            if not i == len(output) - 1 and re.match(r"[0-9]", output[i + 1]):
+                ans += output[i + 2] * int((str(letter) + str(output[i +1])))
+            else:
+                ans += output[i +1] * (int(letter) - 1)
         else:
             ans += letter
     return ans
