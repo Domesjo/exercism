@@ -1,5 +1,12 @@
-def decode():
-    pass
+import re
+def decode(output):
+    ans = ''
+    for i, letter in enumerate(output):
+        if re.match(r"[0-9]", letter):
+            ans += output[i +1] * (int(letter) - 1)
+        else:
+            ans += letter
+    return ans
 
 
 def encode(input):
