@@ -4,7 +4,8 @@ def decode(output):
     for i, letter in enumerate(output):
         if re.match(r"[0-9]", letter):
             if not i == len(output) - 1 and re.match(r"[0-9]", output[i + 1]):
-                ans += output[i + 2] * int((str(letter) + str(output[i +1])))
+                print((int((str(letter) + str(output[i +1])))))
+                ans += output[i + 2] * (int((str(letter) + str(output[i +1]))) - int(output[i +1]))
             else:
                 ans += output[i +1] * (int(letter) - 1)
         else:
@@ -26,4 +27,4 @@ def encode(input):
             count = 1
     print(ans)
     return ans
-encode("AABBBCCCC")
+decode("12WB12W3B24WB")
