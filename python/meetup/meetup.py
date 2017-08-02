@@ -1,4 +1,5 @@
 from datetime import date
+import calendar
 def meetup_day(year, month, name_of_day, type_of_day, start=1, nd=0):
     days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     end_with_teenth = [13, 19, 16]
@@ -17,7 +18,6 @@ def meetup_day(year, month, name_of_day, type_of_day, start=1, nd=0):
         if day.weekday() == days.index(name_of_day):
             nd += 1
         if day.weekday() == days.index(name_of_day) and nd == 2:
-            print(day)
             return day
         else:
             return meetup_day(year, month, name_of_day ,type_of_day, start+1, nd)
@@ -25,7 +25,6 @@ def meetup_day(year, month, name_of_day, type_of_day, start=1, nd=0):
         if day.weekday() == days.index(name_of_day):
             nd += 1
         if day.weekday() == days.index(name_of_day) and nd == 3:
-            print(day)
             return day
         else:
             return meetup_day(year, month, name_of_day ,type_of_day, start+1, nd)
@@ -33,7 +32,18 @@ def meetup_day(year, month, name_of_day, type_of_day, start=1, nd=0):
         if day.weekday() == days.index(name_of_day):
             nd += 1
         if day.weekday() == days.index(name_of_day) and nd == 4:
-            print(day)
+            return day
+        else:
+            return meetup_day(year, month, name_of_day ,type_of_day, start+1, nd)
+    elif type_of_day == '5th':
+        if day.weekday() == days.index(name_of_day):
+            nd += 1
+        if day.weekday() == days.index(name_of_day) and nd == 5:
+            return day
+        else:
+            return meetup_day(year, month, name_of_day ,type_of_day, start+1, nd)
+    elif type_of_day == 'last':
+        if day.weekday() == days.index(name_of_day) and calendar.monthrange(year, month)[1] <= start + 6:
             return day
         else:
             return meetup_day(year, month, name_of_day ,type_of_day, start+1, nd)
