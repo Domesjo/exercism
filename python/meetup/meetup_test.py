@@ -19,7 +19,7 @@ class MeetupTest(unittest.TestCase):
 
     def test_monteenth_of_august_2013(self):
         self.assertEqual(
-            meetup_dayg, date(2013, 8, 19))
+            meetup_day(2013, 8, 'Monday', 'teenth'), date(2013, 8, 19))
 
     def test_monteenth_of_september_2013(self):
         self.assertEqual(
