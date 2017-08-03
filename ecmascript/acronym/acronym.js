@@ -2,7 +2,7 @@ class Acronyms {
 
   parse(shortHand) {
     if(shortHand.match(/.*:/)) return shortHand.match(/.*:/).join('').replace(':', '');
-    return shortHand.match(/ .|[A-Z]/g).join('').toUpperCase().replace(/ /g, '');
+    return shortHand.match(/ .|[A-Z]|-./g).join('').toUpperCase().replace(/ |-/g, '');
   }
 
 }
