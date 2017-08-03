@@ -17,7 +17,7 @@ describe('Acronyms are produced from', () => {
     expect(Acronyms.parse('First In, First Out')).toEqual('FIFO');
   });
 
-  xtest('other phrases with punctuation', () => {
+  test('other phrases with punctuation', () => {
     expect(Acronyms.parse('PHP: Hypertext Preprocessor')).toEqual('PHP');
   });
 
