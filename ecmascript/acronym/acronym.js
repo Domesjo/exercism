@@ -1,7 +1,8 @@
 class Acronyms {
 
   parse(shortHand) {
-    return shortHand.match(/[A-Z]/g).join('');
+    //.*:
+    return shortHand.match(/ .|[A-Z]/g).join('').toUpperCase().replace(/ /g, '');
   }
 
 }
