@@ -10,8 +10,9 @@ function toRoman(num) {
     500: 'D',
     1000: 'M',
   };
-  const numbers = [1, 5, 10, 50, 100, 500, 1000].reverse();
+  const numbers = [1000, 500, 100, 50, 10, 5, 1];
   numbers.forEach((number, index) => {
+  //  const nextNumber = numbers[index + 1] || 1;
     while (int > 0) {
       if (int - (number - 1) >= 0) {
         if (int - number >= 0) {
@@ -24,9 +25,12 @@ function toRoman(num) {
       } else {
         break;
       }
+
+      if(ans.match(/(.)\1\1\1/)) ans = ans.replace(/(.)\1\1\1/, `${inRoman[number]}${inRoman[numbers[index - 1]]}`);
     }
   });
+  console.log(ans);
   return ans;
 }
-toRoman(9)
+toRoman(48);
 module.exports = toRoman;
