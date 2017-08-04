@@ -25,12 +25,10 @@ function toRoman(num) {
       } else {
         break;
       }
-
       if(ans.match(/(.)\1\1\1/)) ans = ans.replace(/(.)\1\1\1/, `${inRoman[number]}${inRoman[numbers[index - 1]]}`);
     }
   });
-  console.log(ans);
   return ans;
 }
-toRoman(48);
+toRoman(93);
 module.exports = toRoman;
