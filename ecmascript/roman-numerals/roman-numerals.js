@@ -1,5 +1,6 @@
-export default function toRoman(int) {
+export default function toRoman(num) {
   let ans = '';
+  let int = num;
   const inRoman = {
     1: 'I',
     5: 'V',
@@ -10,9 +11,16 @@ export default function toRoman(int) {
     1000: 'M',
   };
   while (int > 0) {
-    if (int - 1 >= 0) {
+    if (int - 4 >= 0) {
+      if (int - 5 >= 0) {
+        ans += inRoman[5];
+        int -= 5;
+      } else {
+        ans += `${inRoman[1]}${inRoman[5]}`;
+        int -= 4;
+      }
+    } else if (int - 1 >= 0) {
       ans += inRoman[1];
-      console.log(int);
       int -= 1;
     }
   }
