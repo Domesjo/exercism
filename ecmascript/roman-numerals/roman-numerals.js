@@ -11,9 +11,9 @@ function toRoman(num) {
     1000: 'M',
   };
   const numbers = [1, 5, 10, 50, 100, 500, 1000].reverse();
-  while (int > 0) {
-    numbers.forEach((number, index) => {
-      if (int - (number - 1) >= 0 && int > 0) {
+  numbers.forEach((number, index) => {
+    while (int > 0) {
+      if (int - (number - 1) >= 0) {
         if (int - number >= 0) {
           ans += inRoman[number];
           int -= number;
@@ -21,10 +21,12 @@ function toRoman(num) {
           ans += `${inRoman[numbers[index + 1]]}${inRoman[number]}`;
           int -= number - 1;
         }
+      } else {
+        break;
       }
-    });
-  }
+    }
+  });
   return ans;
 }
-
+toRoman(9)
 module.exports = toRoman;
