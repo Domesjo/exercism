@@ -18,7 +18,7 @@ function toRoman(num) {
           ans += inRoman[number];
           int -= number;
         } else {
-          ans += `${inRoman[numbers[index + 1]]}${inRoman[number]}`;
+          ans += `${inRoman[1]}${inRoman[number]}`;
           int -= number - 1;
         }
       } else {
