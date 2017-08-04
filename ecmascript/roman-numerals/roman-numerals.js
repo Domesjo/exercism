@@ -1,4 +1,4 @@
-export default function toRoman(num) {
+function toRoman(num) {
   let ans = '';
   let int = num;
   const inRoman = {
@@ -10,19 +10,21 @@ export default function toRoman(num) {
     500: 'D',
     1000: 'M',
   };
+  const numbers = [1, 5, 10, 50, 100, 500, 1000].reverse();
   while (int > 0) {
-    if (int - 4 >= 0) {
-      if (int - 5 >= 0) {
-        ans += inRoman[5];
-        int -= 5;
-      } else {
-        ans += `${inRoman[1]}${inRoman[5]}`;
-        int -= 4;
+    numbers.forEach((number, index) => {
+      if (int - (number - 1) >= 0 && int > 0) {
+        if (int - number >= 0) {
+          ans += inRoman[number];
+          int -= number;
+        } else {
+          ans += `${inRoman[numbers[index + 1]]}${inRoman[number]}`;
+          int -= number - 1;
+        }
       }
-    } else if (int - 1 >= 0) {
-      ans += inRoman[1];
-      int -= 1;
-    }
+    });
   }
   return ans;
 }
+
+module.exports = toRoman;
