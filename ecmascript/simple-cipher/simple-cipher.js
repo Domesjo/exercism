@@ -8,12 +8,12 @@ class Cipher {
   }
 
   encode(str) {
-    this.key = str;
-    return str;
+    this.encoded = str;
+    return this.key;
   }
 
-  decode() {
-    return this.key;
+  decode(str) {
+    return this.encoded;
   }
 
   generateRandomKey() {
