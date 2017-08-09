@@ -1,6 +1,10 @@
 class Cipher {
   constructor(key = this.generateRandomKey()) {
-    this.key = key;
+    if (key.match(/^[a-z]+$/)) {
+      this.key = key;
+    } else {
+      throw Error('Bad key');
+    }
   }
 
   encode(str) {
