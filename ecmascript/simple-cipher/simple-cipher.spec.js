@@ -3,22 +3,22 @@ import Cipher from './simple-cipher';
 describe('Random key cipher', () => {
   const cipher = new Cipher();
 
-  xtest('has a key made of letters', () => {
+  test('has a key made of letters', () => {
     expect(cipher.key).toMatch(/^[a-z]+$/);
   });
 
   // Here we take advantage of the fact that plaintext of "aaa..."
   // outputs the key. This is a critical problem with shift ciphers, some
   // characters will always output the key verbatim.
-  xtest('can encode', () => {
+  test('can encode', () => {
     expect(cipher.encode('aaaaaaaaaa')).toEqual(cipher.key.substr(0, 10));
   });
 
-  xtest('can decode', () => {
+  test('can decode', () => {
     expect(cipher.decode(cipher.key.substr(0, 10))).toEqual('aaaaaaaaaa');
   });
 
-  xtest('is reversible', () => {
+  test('is reversible', () => {
     const plaintext = 'abcdefghij';
     expect(cipher.decode(cipher.encode(plaintext))).toEqual(plaintext);
   });
@@ -52,19 +52,19 @@ describe('Substitution cipher', () => {
     expect(cipher.key).toEqual(key);
   });
 
-  test('can encode', () => {
+  xtest('can encode', () => {
     expect(cipher.encode('aaaaaaaaaa')).toEqual('abcdefghij');
   });
 
-  test('can decode', () => {
+  xtest('can decode', () => {
     expect(cipher.decode('abcdefghij')).toEqual('aaaaaaaaaa');
   });
 
-  test('is reversible', () => {
+  xtest('is reversible', () => {
     expect(cipher.decode(cipher.encode('abcdefghij'))).toEqual('abcdefghij');
   });
 
-  test(': double shift encode', () => {
+  xtest(': double shift encode', () => {
     expect(new Cipher('iamapandabear').encode('iamapandabear'))
       .toEqual('qayaeaagaciai');
   });
