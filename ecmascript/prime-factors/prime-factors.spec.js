@@ -8,17 +8,17 @@ describe('primeFactors', () => {
 
   test('factors 3', () => expect(primeFactors.for(3)).toEqual([3]));
 
-  xtest('factors 4', () => expect(primeFactors.for(4)).toEqual([2, 2]));
+  test('factors 4', () => expect(primeFactors.for(4)).toEqual([2, 2]));
 
-  xtest('factors 6', () => expect(primeFactors.for(6)).toEqual([2, 3]));
+  test('factors 6', () => expect(primeFactors.for(6)).toEqual([2, 3]));
 
-  xtest('factors 8', () => expect(primeFactors.for(8)).toEqual([2, 2, 2]));
+  test('factors 8', () => expect(primeFactors.for(8)).toEqual([2, 2, 2]));
 
-  xtest('factors 9', () => expect(primeFactors.for(9)).toEqual([3, 3]));
+  test('factors 9', () => expect(primeFactors.for(9)).toEqual([3, 3]));
 
-  xtest('factors 27', () => expect(primeFactors.for(27)).toEqual([3, 3, 3]));
+  test('factors 27', () => expect(primeFactors.for(27)).toEqual([3, 3, 3]));
 
-  xtest('factors 625', () => expect(primeFactors.for(625)).toEqual([5, 5, 5, 5]));
+  test('factors 625', () => expect(primeFactors.for(625)).toEqual([5, 5, 5, 5]));
 
   xtest('factors 901255', () => expect(primeFactors.for(901255)).toEqual([5, 17, 23, 461]));
 

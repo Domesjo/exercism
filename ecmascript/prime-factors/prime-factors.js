@@ -6,13 +6,13 @@ class PrimeFactors {
     while (int !== 1) {
       while (int % start === 0) {
         int = int / start;
-        if (int % (start) !== 0) primes.push(start);
+        if (int % (start + 1) !== 0) primes.push(start);
       }
       start += 1;
     }
     return primes;
   }
 }
-// const p = new PrimeFactors();
-// console.log(p.for(3));
+ // const p = new PrimeFactors();
+ // console.log(p.for(6));
 export default PrimeFactors;
