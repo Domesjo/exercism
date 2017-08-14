@@ -9,7 +9,8 @@ class Binary {
     const ans = this.decimal.split('').map((number, i) => {
       return parseInt(number) * Math.pow(2, (this.decimal.length - (i + 1)));
     });
-    return parseInt(ans.join(''));
+
+    return ans.reduce((acc, curr) => parseFloat(acc) + parseFloat(curr));
   }
 }
 
