@@ -23,7 +23,14 @@ class Cipher {
   }
 
   decode(str) {
-    return this.key;
+    return str.split('')
+      .map((letter, index) => {
+        let c = letter.charCodeAt(0) - this.key[index % this.key.length].charCodeAt(0);
+        c %= ((this.z_ascii - this.a_ascii) + 1);
+        c += this.a_ascii;
+        return String.fromCharCode(c);
+      }, this)
+  .join('');
   }
 
   generateRandomKey() {
