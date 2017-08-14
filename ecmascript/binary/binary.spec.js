@@ -1,9 +1,9 @@
 import Binary from './binary';
 
 describe('binary', () => {
-  test('0 is decimal 0', () => expect(new Binary('0').toDecimal()).toEqual(0));
+  xtest('0 is decimal 0', () => expect(new Binary('0').toDecimal()).toEqual(0));
 
-  xtest('1 is decimal 1', () => expect(new Binary('1').toDecimal()).toEqual(1));
+  test('1 is decimal 1', () => expect(new Binary('1').toDecimal()).toEqual(1));
 
   xtest('10 is decimal 2', () => expect(new Binary('10').toDecimal()).toEqual(2));
 
