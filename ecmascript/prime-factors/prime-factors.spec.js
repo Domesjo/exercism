@@ -20,7 +20,7 @@ describe('primeFactors', () => {
 
   test('factors 625', () => expect(primeFactors.for(625)).toEqual([5, 5, 5, 5]));
 
-  xtest('factors 901255', () => expect(primeFactors.for(901255)).toEqual([5, 17, 23, 461]));
+  test('factors 901255', () => expect(primeFactors.for(901255)).toEqual([5, 17, 23, 461]));
 
-  xtest('factors 93819012551', () => expect(primeFactors.for(93819012551)).toEqual([11, 9539, 894119]));
+  test('factors 93819012551', () => expect(primeFactors.for(93819012551)).toEqual([11, 9539, 894119]));
 });
