@@ -6,7 +6,7 @@ describe('primeFactors', () => {
 
   test('factors 2', () => expect(primeFactors.for(2)).toEqual([2]));
 
-  xtest('factors 3', () => expect(primeFactors.for(3)).toEqual([3]));
+  test('factors 3', () => expect(primeFactors.for(3)).toEqual([3]));
 
   xtest('factors 4', () => expect(primeFactors.for(4)).toEqual([2, 2]));
 
