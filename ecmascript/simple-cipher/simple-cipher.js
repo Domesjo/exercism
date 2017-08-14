@@ -3,14 +3,23 @@ class Cipher {
     if (key.match(/^[a-z]+$/)) {
       this.key = key;
       this.cipher = '';
+      this.a_ascii = 'a'.charCodeAt(0);
+      this.z_ascii = 'z'.charCodeAt(0);
     } else {
       throw Error('Bad key');
     }
   }
 
   encode(str) {
-     this.key = str;
-    return str;
+    return str.split('')
+    .map((letter, index) => {
+      let c = letter.charCodeAt(0) + this.key[index % this.key.length].charCodeAt(0);
+      c -= 2 * this.a_ascii;
+      c %= ((this.z_ascii - this.a_ascii) + 1);
+      c += this.a_ascii;
+      return String.fromCharCode(c);
+    }, this)
+    .join('');
   }
 
   decode(str) {
@@ -29,15 +38,3 @@ class Cipher {
 }
 
 export default Cipher;
-
-function encoded(str) {
-  const alpa = 'aqzwsxedcrfvtgbyhnujmikolp'.split('').sort();
-  const cipher = 'dabcefghijklmnopqrstuvwxyz';
-  const obj = {};
-  alpa.forEach((val, i) => {
-    obj[val] = cipher[i];
-  });
-  const ans = str.split('').map(letter => letter = obj[letter]).join('');
-  console.log(ans);
-}
-encoded('iamapandabear');
