@@ -9,8 +9,9 @@ class Transcriptor {
   }
 
   toRna(str) {
-    if(!str.match(/G|C|A|T/g)) throw Error("Invalid input DNA.");
+    if(!str.match(/^[G|C|A|T]+$/g)) throw Error("Invalid input DNA.");
     return str.match(/G|C|A|T/g).map(rna => this.trans[rna]).join('');
+
   }
 }
 // let t = new Transcriptor();
