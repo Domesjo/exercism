@@ -72,7 +72,7 @@ describe('Anagram', () => {
     expect(matches).toEqual(["tan"]);
   });
 
-  it("matches() accepts single string argument", () => {
+  xit("matches() accepts single string argument", () => {
     let subject = new Anagram("ant");
     let matches = subject.matches("tan");
 
