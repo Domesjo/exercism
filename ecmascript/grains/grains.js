@@ -2,19 +2,16 @@ const BigInt = require('big-integer');
 
 
 export default class Grains {
-  square(x){
-    let grains = BigInt(0);
+  square(x, grain=0){
+    let grains = BigInt(grain);
 
-    function getGrains(x){
-      if(x === 0){
-        return grains.toString();
-      } else {
-        grains = BigInt(grains).times(2);
-        if(BigInt(grains).equals(1) || grains.equals(0)) grains+=1;
-        return getGrains((x -1));
-      }
+    if(x === 0){
+      return grains.toString();
+    } else {
+      grains = BigInt(grains).times(2);
+      if (BigInt(grains).equals(1) || grains.equals(0)) grains+=1;
+      return this.square((x -1), grains);
     }
-    return getGrains(x);
   }
 
   total(){
