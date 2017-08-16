@@ -22,6 +22,16 @@ class linkedList {
   unshift(input) {
     return this.list.splice(0, 0, input); // inserts an item on the first index of the array
   }
+
+  count() {
+    return this.list.length;
+  }
+
+  delete(input) {
+    const index = this.list.indexOf(input);
+    if (index >= 0) return this.list.splice(index, 1);
+  }
+  
 }
 
 
