@@ -17,7 +17,7 @@ describe('Triangle', () => {
     expect(new Triangle(4).lastRow).toEqual([1, 3, 3, 1]);
   });
 
-  xtest('fifth row', () => {
+  test('fifth row', () => {
     expect(new Triangle(5).lastRow).toEqual([1, 4, 6, 4, 1]);
   });
 
