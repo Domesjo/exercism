@@ -14,7 +14,8 @@ class Triangle{
         const previousRow = this.rows[i - 1]; // is the previousRow
         const nextRow = [];
         for (let x = 0; x <= previousRow.length; x++) { //x is current index o the nextRow
-          const field = (previousRow[x - 1] || 0) + (previousRow[x + 1] || 0);
+          console.log(previousRow[x], previousRow[x - 1]);
+          const field = (previousRow[x - 1] || 0) + (previousRow[x] || 0);
           nextRow.push(field === 0 ? 1 : field);
         }
         this.rows.push(nextRow);
