@@ -12,8 +12,9 @@ class Triangle{
       } else {
         // takes the previous row to know how many intergers there should be in the next row
         const nextRow = [];
-        for (let x = 0; x <= this.rows[i - 1].length; x++) {
-          nextRow.push(this.rows[i + 1] + this.rows[i]);
+        for (let x = 0; x <= this.rows[i - 1].length; x++) { //x is current index o the nextRow
+          console.log(this.rows[i - 1][x], this.rows[i - 1][x + 1]);
+          nextRow.push((this.rows[i - 1][x] || 0) + (this.rows[i - 1][x + 1] || 0));
         }
         this.rows.push(nextRow);
       }
