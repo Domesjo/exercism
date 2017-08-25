@@ -11,10 +11,14 @@ class Triangle{
         this.rows.push([1]); // if no rows created push first
       } else {
         // takes the previous row to know how many intergers there should be in the next row
+        const previousRow = this.rows[i - 1]; // is the previousRow
         const nextRow = [];
-        for (let x = 0; x <= this.rows[i - 1].length; x++) { //x is current index o the nextRow
-          console.log(this.rows[i - 1][x], this.rows[i - 1][x + 1]);
-          nextRow.push((this.rows[i - 1][x] || 0) + (this.rows[i - 1][x + 1] || 0));
+        for (let x = 0; x <= previousRow.length; x++) { //x is current index o the nextRow
+          if (!previousRow[x]) {
+            nextRow.push((previousRow[x] || 0) + (previousRow[x - 1] || 0));
+          } else {
+            nextRow.push((previousRow[x] || 0) + (previousRow[x + 1] || 0));
+          }
         }
         this.rows.push(nextRow);
       }
