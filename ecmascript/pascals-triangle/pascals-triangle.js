@@ -3,6 +3,7 @@ class Triangle{
     this.amountOfRows = rowsNumber; // sets the number of Rows
     this.rows = [];
     this.createTriangle();
+    this.lastRow = this.rows[this.rows.length - 1];
   }
 
   createTriangle() {
@@ -14,7 +15,6 @@ class Triangle{
         const previousRow = this.rows[i - 1]; // is the previousRow
         const nextRow = [];
         for (let x = 0; x <= previousRow.length; x++) { //x is current index o the nextRow
-          console.log(previousRow[x], previousRow[x - 1]);
           const field = (previousRow[x - 1] || 0) + (previousRow[x] || 0);
           nextRow.push(field === 0 ? 1 : field);
         }
@@ -22,6 +22,7 @@ class Triangle{
       }
     }
   }
+
 }
 
 export default Triangle;
