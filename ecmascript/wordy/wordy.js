@@ -9,7 +9,7 @@ class WordProblem {
 
   answer() {
     let ans = '';
-    this.question.match(/[0-9]|plus|minus/g).forEach((val) => {
+    this.question.match(/-*[0-9]|plus|minus/g).forEach((val) => {
       if (this.operator[val]) {
         ans += this.operator[val];
       } else {
