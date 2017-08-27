@@ -15,16 +15,17 @@ class WordProblem {
   }
 
   answer() {
-    let ans = '';
+    let ans = '(';
     if (!this.matches || !this.matches.some(val => this.operator[val])) throw new ArgumentError('Invalid input provided');
-    this.matches.forEach((val) => {
+    this.matches.forEach((val, index) => {
       if (this.operator[val]) {
-        ans += this.operator[val];
+        ans += index === 3 ? `)${this.operator[val]}`: this.operator[val];
       } else {
         ans += val;
       }
     });
     ans = ans.replace(/--/, '+'); // replaces the -- with points to decrase to a + instead
+    console.log(ans);
     return eval(ans);
   }
 }
