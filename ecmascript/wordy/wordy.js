@@ -19,13 +19,13 @@ class WordProblem {
     if (!this.matches || !this.matches.some(val => this.operator[val])) throw new ArgumentError('Invalid input provided');
     this.matches.forEach((val, index) => {
       if (this.operator[val]) {
-        ans += index === 3 ? `)${this.operator[val]}`: this.operator[val];
+        ans += index === this.matches.length - 2 ? `)${this.operator[val]}`: this.operator[val];
       } else {
         ans += val;
       }
     });
     ans = ans.replace(/--/, '+'); // replaces the -- with points to decrase to a + instead
-    console.log(ans);
+    if (!ans.split('').includes(')')) ans += ')';
     return eval(ans);
   }
 }
