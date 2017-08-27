@@ -1,5 +1,6 @@
 class SecretHandshake {
   constructor(hexaDecimal) {
+    if (!parseInt(hexaDecimal.toString(2))) throw new Error('Handshake must be a number');
     this.binary = parseInt(hexaDecimal.toString(2)); // converts the hexadecimal to binary
 
     this.handShakes = { // all the different type of handshakes
@@ -12,7 +13,8 @@ class SecretHandshake {
   }
 
   commands() {
-    const keys = Object.keys(this.handShakes).reverse(); // returns the keys from objects so I can loop through
+    // if its an even number it shall reverse it otherwise it needs to count backwards
+    const keys = this.binary % 2 === 0 ? Object.keys(this.handShakes).reverse() : Object.keys(this.handShakes); // returns the keys from objects so I can loop through
     while (this.binary > 0) {
       keys.forEach((key) => {
         if (this.binary - parseInt(key) >= 0) {

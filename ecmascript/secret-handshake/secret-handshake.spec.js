@@ -36,7 +36,7 @@ describe('Secret Handshake', () => {
     expect(handshake.commands()).toEqual(['jump', 'close your eyes', 'double blink', 'wink']);
   });
 
-  xtest('text is an invalid secret handshake', () => {
+  test('text is an invalid secret handshake', () => {
     expect(() => new SecretHandshake('piggies'))
       .toThrow(new Error('Handshake must be a number'));
   });
