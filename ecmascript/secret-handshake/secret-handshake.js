@@ -16,14 +16,25 @@ class SecretHandshake {
     // if its an even number it shall reverse it otherwise it needs to count backwards
     const keys = this.binary % 2 === 0 ? Object.keys(this.handShakes).reverse() : Object.keys(this.handShakes); // returns the keys from objects so I can loop through
     while (this.binary > 0) {
-      keys.forEach((key) => {
-        if (this.binary - parseInt(key) >= 0) {
-          this.handShake.push(this.handShakes[key]);
-          this.binary -= parseInt(key);
-        }
-      });
+      if (this.binary < 10000) {
+        keys.forEach((key) => {
+          if (this.binary - parseInt(key) >= 0) {
+            this.handShake.push(this.handShakes[key]);
+            this.binary -= parseInt(key);
+          }
+        });
+        return this.handShake
+      } else {
+        this.binary -= 10000;
+        keys.forEach((key) => {
+          if (this.binary - parseInt(key) >= 0) {
+            this.handShake.push(this.handShakes[key]);
+            this.binary -= parseInt(key);
+          }
+        });
+        return this.handShake.reverse();
+      }
     }
-    return this.handShake;
   }
 }
 

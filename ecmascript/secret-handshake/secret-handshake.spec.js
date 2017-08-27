@@ -26,12 +26,12 @@ describe('Secret Handshake', () => {
     expect(handshake.commands()).toEqual(['wink', 'double blink']);
   });
 
-  xtest('binary 10011 (hexadecimal 0x13) is double blink and wink', () => {
+  test('binary 10011 (hexadecimal 0x13) is double blink and wink', () => {
     const handshake = new SecretHandshake(0x13);
     expect(handshake.commands()).toEqual(['double blink', 'wink']);
   });
 
-  xtest('binary 11111 (hexadecimal 0x1F) is jump, close your eyes, double blink, and wink', () => {
+  test('binary 11111 (hexadecimal 0x1F) is jump, close your eyes, double blink, and wink', () => {
     const handshake = new SecretHandshake(0x1F);
     expect(handshake.commands()).toEqual(['jump', 'close your eyes', 'double blink', 'wink']);
   });
