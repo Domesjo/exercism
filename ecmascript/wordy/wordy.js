@@ -16,8 +16,7 @@ class WordProblem {
 
   answer() {
     let ans = '';
-    console.log(this.matches.some(val => this.operator[val]));
-    if (!this.matches || !this.matches.some(val => this.operator[val])) throw new ArgumentError('bruuh');
+    if (!this.matches || !this.matches.some(val => this.operator[val])) throw new ArgumentError('Invalid input provided');
     this.matches.forEach((val) => {
       if (this.operator[val]) {
         ans += this.operator[val];
