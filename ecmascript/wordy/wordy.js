@@ -1,3 +1,7 @@
+function ArgumentError(message) {
+  this.name = 'ArgumentError';
+  this.message = message || 'Invalid input provided';
+}
 class WordProblem {
   constructor(question) { // sets the question
     this.question = question;
@@ -7,11 +11,14 @@ class WordProblem {
       multiplied: '*',
       divided: '/',
     };
+    this.matches = this.question.match(/-*[0-9]|plus|minus|multiplied|divided/g);
   }
 
   answer() {
     let ans = '';
-    this.question.match(/-*[0-9]|plus|minus|multiplied|divided/g).forEach((val) => {
+    console.log(this.matches.some(val => this.operator[val]));
+    if (!this.matches || !this.matches.some(val => this.operator[val])) throw new ArgumentError('bruuh');
+    this.matches.forEach((val) => {
       if (this.operator[val]) {
         ans += this.operator[val];
       } else {
@@ -22,5 +29,4 @@ class WordProblem {
     return eval(ans);
   }
 }
-
-module.exports = { WordProblem };
+module.exports = { WordProblem, ArgumentError };
