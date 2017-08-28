@@ -7,6 +7,10 @@
 
 function distance($a, $b)
 {
+  if(strlen($a) != strlen($b))
+  {
+    throw new InvalidArgumentException("DNA strands must be of equal length.");
+  }
   $a = str_split($a); // turns the string to an array with each letter
   $b = str_split($b);
   $count = 0; // the inital count of the difference
