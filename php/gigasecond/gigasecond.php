@@ -4,5 +4,7 @@ use \DateTime;
 function from($date)
 {
   $billion = pow(10, 9);
-  return $date->add(new DateInterval("PT{$billion}S"));
+
+  $ans = clone $date;
+  return $ans->add(new DateInterval("PT{$billion}S"));
 }
