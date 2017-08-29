@@ -4,6 +4,7 @@ use \DateTime;
 function from($date)
 {
   $billion = pow(10, 9);
-  fputs(STDOUT, date("Y-m-d H:i:s", $billion) . "\n----------\n"); // logs to the terminal
+  fputs(STDOUT, date_timestamp_get($date));
+  fputs(STDOUT, gmdate('H:i', $billion) . "\n----------\n"); // logs to the terminal
   return $date;
 }
