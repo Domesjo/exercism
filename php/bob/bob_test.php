@@ -31,28 +31,24 @@ class BobTest extends PHPUnit\Framework\TestCase
 
     public function testAskingAQuestion()
     {
-        $this->markTestSkipped();
 
         $this->assertEquals("Sure.", $this->bob->respondTo("Does this cryogenic chamber make me look fat?"));
     }
 
     public function testAskingANumericQuestion()
     {
-        $this->markTestSkipped();
 
         $this->assertEquals("Sure.", $this->bob->respondTo("You are, what, like 15?"));
     }
 
     public function testAskingGibberish()
     {
-        $this->markTestSkipped();
 
         $this->assertEquals("Sure.", $this->bob->respondTo("fffbbcbeab?"));
     }
 
     public function testTalkingForcefully()
     {
-        $this->markTestSkipped();
 
         $this->assertEquals("Whatever.", $this->bob->respondTo("Let's go make out behind the gym!"));
     }
