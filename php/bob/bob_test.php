@@ -21,15 +21,11 @@ class BobTest extends PHPUnit\Framework\TestCase
 
     public function testShouting()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("WATCH OUT!"));
     }
 
     public function testShoutingGibberish()
     {
-        $this->markTestSkipped();
-
         $this->assertEquals("Whoa, chill out!", $this->bob->respondTo("FCECDFCAAB"));
     }
 
