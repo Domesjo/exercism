@@ -11,7 +11,7 @@ class PangramTest extends PHPUnit\Framework\TestCase
 
     public function testPangramWithOnlyLowerCase()
     {
-        $this->markTestSkipped();
+        
         $this->assertTrue(isPangram('the quick brown fox jumps over the lazy dog'));
     }
 
