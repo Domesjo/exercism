@@ -7,7 +7,7 @@ function isPangram($phrase)
 
   foreach($phrase as $letter)
   {// array_Search is like indexOf
-      if(($index = array_search($letter, $alpa)) !== false) // if there is an index
+      if(($index = array_search(strtolower($letter), $alpa)) !== false) // if there is an index
       {
         unset($alpa[$index]);
       }
