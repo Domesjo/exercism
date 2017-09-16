@@ -11,19 +11,16 @@ class IsogramTest extends PHPUnit\Framework\TestCase
 
     public function testNotIsogram()
     {
-        $this->markTestSkipped();
         $this->assertFalse(isIsogram('eleven'));
     }
 
     public function testMediumLongIsogram()
     {
-        $this->markTestSkipped();
         $this->assertTrue(isIsogram('subdermatoglyphic'));
     }
 
     public function testCaseInsensitive()
     {
-        $this->markTestSkipped();
         $this->assertFalse(isIsogram('Alphabet'));
     }
 
@@ -47,7 +44,7 @@ class IsogramTest extends PHPUnit\Framework\TestCase
 
     public function testIgnoresSpaces()
     {
-        $this->markTestSkipped();
+
         $this->assertFalse(isIsogram('the quick brown fox'));
     }
 
@@ -59,7 +56,6 @@ class IsogramTest extends PHPUnit\Framework\TestCase
 
     public function testDuplicateAccentedLetters()
     {
-        $this->markTestSkipped();
         $this->assertFalse(isIsogram('éléphant'));
     }
 }
