@@ -26,19 +26,16 @@ class IsogramTest extends PHPUnit\Framework\TestCase
 
     public function testIsogramWithHyphen()
     {
-        $this->markTestSkipped();
         $this->assertTrue(isIsogram('thumbscrew-japingly'));
     }
 
     public function testIgnoresMultipleHyphens()
     {
-        $this->markTestSkipped();
         $this->assertTrue(isIsogram('Hjelmqvist-Gryb-Zock-Pfund-Wax'));
     }
 
     public function testWorksWithGermanLetters()
     {
-        $this->markTestSkipped();
         $this->assertTrue(isIsogram('Heizölrückstoßabdämpfung'));
     }
 
@@ -50,7 +47,6 @@ class IsogramTest extends PHPUnit\Framework\TestCase
 
     public function testIgnoresSpaces2()
     {
-        $this->markTestSkipped();
         $this->assertTrue(isIsogram('Emily Jung Schwartzkopf'));
     }
 
