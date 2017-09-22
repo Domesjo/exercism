@@ -2,10 +2,19 @@
 
 function raindrops($number)
 {
-  $ans = "";
-  $number % 3 == 0 ? $ans = $ans . "Pling" : $ans;
-  $number % 5 == 0 ? $ans = $ans . "Plang" : $ans;
-  $number % 7 == 0 ? $ans = $ans . "Plong" : $ans;
+    $ans = "";
+    $checks = array(3 => "Pling", 5 => "Plang", 7 => "Plong");
 
-  return $ans ? $ans : (string) $number;
+    foreach($checks as $k => $v)
+    {
+      $ans = $ans . logic($number, $k, $v);
+    }
+
+    return $ans ? $ans : (string) $number;
+}
+
+
+function logic(int $int, int $setInt,string $str)
+{
+  return $int % $setInt == 0 ? $str : "";
 }
