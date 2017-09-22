@@ -11,25 +11,21 @@ class SquaresTest extends PHPUnit\Framework\TestCase
 
     public function testSumOfSquaresTo5()
     {
-        $this->markTestSkipped();
         $this->assertEquals(55, sumOfSquares(5));
     }
 
     public function testDifferenceOfSumsTo5()
     {
-        $this->markTestSkipped();
         $this->assertEquals(170, difference(5));
     }
 
     public function testSquareOfSumsTo10()
     {
-        $this->markTestSkipped();
         $this->assertEquals(3025, squareOfSums(10));
     }
 
     public function testSumOfSquaresTo10()
     {
-        $this->markTestSkipped();
         $this->assertEquals(385, sumOfSquares(10));
     }
 
