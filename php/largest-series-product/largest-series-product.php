@@ -8,9 +8,12 @@ class Series
     {
         $serial = str_split((string) $serialNumber);
 
-        $serial = array_map("intval", $serial);
+        $this->serial = array_map("intval", $serial);
+    }
 
-        var_dump($serial);
+    private function getSerial()
+    {
+        return $this->serial;
     }
 
     public function largestProduct(int $num)
@@ -19,8 +22,9 @@ class Series
 
         for($i = 0; $i < $num; $i++)
         {
-            array_push($biggest, max($serial));
+            array_push($biggest, max($this->getSerial()));
         }
+        var_dump($biggest);
 
     }
 }
