@@ -19,12 +19,21 @@ class Series
     public function largestProduct(int $num)
     {
         $biggest = array();
+        $serial = $this->getSerial();
 
         for($i = 0; $i < $num; $i++)
         {
-            array_push($biggest, max($this->getSerial()));
+            $currentBiggest = max($serial);
+            array_push($biggest, $currentBiggest);
+            unset($serial[array_search($currentBiggest, $serial)]);
         }
-        var_dump($biggest);
 
+        function times($array, $number)
+        {
+           $array *= $number;
+           return $array;
+        }
+
+        return array_reduce($biggest, "times", 1);
     }
 }
