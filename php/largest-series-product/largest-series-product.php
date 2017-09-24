@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Series
 {
     private $serial;
@@ -18,22 +20,30 @@ class Series
 
     public function largestProduct(int $num)
     {
-        $biggest = array();
+        $biggest = 0;
         $serial = $this->getSerial();
 
-        for($i = 0; $i < $num; $i++)
+        for($i = 0; $i <= (count($serial) - $num); $i++)
         {
-            $currentBiggest = max($serial);
-            array_push($biggest, $currentBiggest);
-            unset($serial[array_search($currentBiggest, $serial)]);
-        }
+            $products = array();
+            for($z = 0; $z < $num; $z++)
+            {
+                array_push($products, $serial[$i + $z]);
+            }
 
-        function times($array, $number)
-        {
-           $array *= $number;
-           return $array;
-        }
+            $ans = array_reduce($products, function ($array, $number)
+                {
+                    $array *= $number;
+                    return $array;
+                }, 1);
 
-        return array_reduce($biggest, "times", 1);
+            if($ans > $biggest)
+            {
+                $biggest = $ans;
+            }
+        }
+        return $biggest;
+
+
     }
 }

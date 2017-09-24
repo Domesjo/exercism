@@ -20,15 +20,14 @@ class SeriesTest extends PHPUnit\Framework\TestCase
     public function testCanFindTheLargestProductOf2()
     {
         $this->markTestSkipped();
-
         $series = new Series(576802143);
         $this->assertEquals(48, $series->largestProduct(2));
     }
 
     public function testFindsTheLargestProductIfSpanEqualsLength()
     {
-        $this->markTestSkipped();
 
+        $this->markTestSkipped();
         $series = new Series(29);
         $this->assertEquals(18, $series->largestProduct(2));
     }
@@ -36,7 +35,6 @@ class SeriesTest extends PHPUnit\Framework\TestCase
     public function testCanFindTheLargestProductOf3WithNumbersInOrder()
     {
         $this->markTestSkipped();
-
         $series = new Series(123456789);
         $this->assertEquals(504, $series->largestProduct(3));
     }
@@ -44,7 +42,6 @@ class SeriesTest extends PHPUnit\Framework\TestCase
     public function testCanFindTheLargestProductOf3()
     {
         $this->markTestSkipped();
-
         $series = new Series(1027839564);
         $this->assertEquals(270, $series->largestProduct(3));
     }
