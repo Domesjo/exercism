@@ -10,7 +10,14 @@ class Series
     {
         $serial = str_split((string) $serialNumber);
 
-        $this->serial = array_map("intval", $serial);
+        $this->serial = array_map(function ($number)
+        {
+            if(preg_match("/[a-zA-Z]/", $number))
+            {
+                throw new InvalidArgumentException("bruh");
+            }
+            return intval($number);
+        }, $serial);
     }
 
     private function getSerial()
@@ -22,6 +29,11 @@ class Series
     {
         $biggest = 0;
         $serial = $this->getSerial();
+
+        if ($num > count($serial) || $num >= count($serial) && count($serial) <= 1 || $num < 0)
+        {
+            throw new InvalidArgumentException("bruuh");
+        }
 
         for($i = 0; $i <= (count($serial) - $num); $i++)
         {
