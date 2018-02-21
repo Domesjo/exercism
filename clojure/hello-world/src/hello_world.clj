@@ -2,7 +2,7 @@
 
 (defn hello
     ([] "Hello, World!")
-    ([name] (str "Hello, " name "!")))
+    ([name] (format "Hello, %s!" name)))
 
 
 
