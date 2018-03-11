@@ -15,6 +15,5 @@ class PrimeFactors {
     return primes;
   }
 }
-// const p = new PrimeFactors();
-// console.log(p.for(6));
+
 export default PrimeFactors;

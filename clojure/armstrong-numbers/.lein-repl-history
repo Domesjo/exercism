@@ -25,3 +25,7 @@ exit
 (* 25 25 25)
 (* 25 3)
 (load-file "src/armstrong_numbers.clj")
+exit
+(load-file "src/two-fer.clj")
+(load-file "src/two_fer.clj")
+exit

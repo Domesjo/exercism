@@ -4,7 +4,6 @@ function raindrops($number)
 {
     $ans = "";
     $checks = array(3 => "Pling", 5 => "Plang", 7 => "Plong");
-
     foreach($checks as $k => $v)
     {
       $ans = $ans . logic($number, $k, $v);

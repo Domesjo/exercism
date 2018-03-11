@@ -11,5 +11,5 @@ describe('Scrabble', () => {
 
   test('scores more complicated words with more', () => expect(score('quirky')).toEqual(22));
 
-  xtest('scores case insensitive words', () => expect(score('OXYPHENBUTAZONE')).toEqual(41));
+  test('scores case insensitive words', () => expect(score('OXYPHENBUTAZONE')).toEqual(41));
 });
