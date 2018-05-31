@@ -39,7 +39,35 @@ class List {
             const activeValue = this.values[i];
             newValues.push(method(activeValue));
         }
+
         this.values = newValues;
+        return this;
+    }
+
+    foldl(method, initalValue = null) {
+        let reduced = initalValue;
+        for (let i = 0; i < this.length(); i++) {
+            reduced = method(reduced, this.values[i]);
+        }
+
+        return reduced;
+    }
+
+    foldr(method, initalValue = null) {
+        let reduced = initalValue;
+        for (let i = this.length() - 1; i >= 0; i--) {
+            reduced = method(reduced, this.values[i]);
+        }
+
+        return reduced;
+    }
+
+    reverse() {
+        const copy = []
+        for (let i = this.length() - 1; i >= 0; i--) {
+            copy[this.length() - i - 1] = this.values[i];
+        }
+        this.values = copy;
         return this;
     }
 }
